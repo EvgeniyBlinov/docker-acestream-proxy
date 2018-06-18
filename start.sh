@@ -18,4 +18,7 @@ sed -i 's/videopausedelay = .*/videopausedelay = 0/' /home/tv/aceproxy-master/ac
 sed -i 's/videodelay = .*/videodelay = 0/' /home/tv/aceproxy-master/aceconfig.py
 sed -i 's/videodestroydelay = .*/videodestroydelay = 30/' /home/tv/aceproxy-master/aceconfig.py
 
+perl -pi -e 's/vlccmd\s*=\s*.*/vlccmd = "vlc -I telnet --clock-jitter -1 --network-caching -1 --sout-mux-caching 2000 --telnet-password admin --telnet-port 4212"/' /home/tv/aceproxy-master/aceconfig.py
+
+
 exec /usr/bin/supervisord
